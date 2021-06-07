@@ -17,9 +17,11 @@ const client = new line.Client(config);
 router.post('/', async (req, res) => {
     console.log('req.body', req.body);
     let events = req.body.events[0];
+    let source = req.body.events[0].source;
     let text = events.message.text || '';
-    let replyToken = events.replyToken || '';
+    let replyToken = events.replyToken || 's';
     console.log('event.message', events.message);
+    console.log('source', source);
     console.log('text', text);
 
     let payload = {
