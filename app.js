@@ -5,7 +5,7 @@ const port = process.env.PORT || 8080;
 
 app.use(bodyParser.json({limit: '50mb'}));
 
-app.use('/line', require('./controllers/line-notify/index'));
+app.use('/webhook', require('./controllers/line-notify/index'));
 
 // const https = require('https');
 // https.createServer(app).listen(4200, function() {
