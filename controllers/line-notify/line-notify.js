@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const service = require('../../service/lineNotify')
 
-router.get('/', async (req, res) => {
+router.post('/', async (req, res) => {
     // service.notifyService();
     // res.json({
     //     msg: 'OK'
