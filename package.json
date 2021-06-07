@@ -15,7 +15,8 @@
     "line-api": "^0.2.1",
     "passport": "^0.4.1",
     "passport-github": "^1.1.0",
-    "unirest": "^0.6.0"
+    "unirest": "^0.6.0",
+    "@line/bot-sdk": "^6.8.0"
   },
   "engines": {
     "node": "14.0.0",
