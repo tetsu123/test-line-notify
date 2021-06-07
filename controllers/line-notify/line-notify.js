@@ -4,13 +4,16 @@ const service = require('../../service/lineNotify')
 
 router.get('/', async (req, res) => {
     service.notifyService();
+    res.json({
+        msg: 'OK'
+    });
 });
 
-router.post('/', async (req, res) => {
-    let message = {
-        to: 
-    };
-    service.messageAPI(message);
-});
+// router.post('/', async (req, res) => {
+//     // let message = {
+//     //     to: 
+//     // };
+//     service.messageAPI(message);
+// });
 
 module.exports = router;
