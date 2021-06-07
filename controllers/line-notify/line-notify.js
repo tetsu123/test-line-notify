@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
     // console.log('replyToken', replyToken);
     // console.log('msg', msg);
 
-    res.sendStatus(200);
+    res.status(200);
     // res.json({
     //     status: 200,
     //     message: 'Webhook is working!'
