@@ -7,12 +7,12 @@ router.get('/', async (req, res) => {
     // res.json({
     //     msg: 'OK'
     // });
-    console.log('req.body.events[0]', req.body.events[0]);
-    let replyToken = req.body.events[0].replyToken;
-    let msg = req.body.events[0].message.text;
+    console.log('req.body', req.body);
+    // let replyToken = req.body.events[0].replyToken;
+    // let msg = req.body.events[0].message.text;
 
-    console.log('replyToken', replyToken);
-    console.log('msg', msg);
+    // console.log('replyToken', replyToken);
+    // console.log('msg', msg);
 
     res.json({
         status: 200,
