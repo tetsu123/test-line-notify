@@ -30,7 +30,8 @@ router.post('/', async (req, res) => {
         type: 'text',
         text: text
     };
-    res.json(replyToken, payload);
+    let a = client.replyMessage(replyToken, payload);
+    res.json(a);
 });
 
 // router.post('/', async (req, res) => {
