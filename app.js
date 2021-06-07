@@ -28,9 +28,9 @@ cron.schedule(5000, async () => {
         .send(messages)
         .end((response) => {
             console.log('response', response);
-        })
+        });
     } catch (error) {
-
+        console.log('error', error);
     }
 })
 
