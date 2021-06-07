@@ -20,10 +20,10 @@ router.post('/', async (req, res) => {
     //     msg: 'OK'
     // });
     console.log('req.body', req.body);
-    let event = req.body.event[0];
-    let text = event.message.text;
-    let replyToken = event.replyToken;
-    console.log('event.message', event.message);
+    let events = req.body.events[0];
+    let text = events.message.text;
+    let replyToken = events.replyToken;
+    console.log('event.message', events.message);
     console.log('text', text);
 
     let payload = {
