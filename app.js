@@ -7,7 +7,7 @@ app.use(bodyParser.json({limit: '50mb'}));
 app.use('/line', require('./controllers/line-notify/index'));
 
 const https = require('https');
-https.createServer(app).listen(8080, function() {
+https.createServer(app).listen(4200, function() {
     console.log(`> Ready on https://localhost:4201`);
 });
   
