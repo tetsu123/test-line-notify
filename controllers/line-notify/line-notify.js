@@ -15,14 +15,10 @@ const config = {
 const client = new line.Client(config);
 
 router.post('/', async (req, res) => {
-    // service.notifyService();
-    // res.json({
-    //     msg: 'OK'
-    // });
     console.log('req.body', req.body);
     let events = req.body.events[0];
-    let text = events.message.text;
-    let replyToken = events.replyToken;
+    let text = events.message.text || '';
+    let replyToken = events.replyToken || '';
     console.log('event.message', events.message);
     console.log('text', text);
 
@@ -30,15 +26,8 @@ router.post('/', async (req, res) => {
         type: 'text',
         text: text
     };
-    let a = client.replyMessage(replyToken, payload);
-    res.json(a);
+    let responseMessage = client.replyMessage(replyToken, payload);
+    res.json(responseMessage);
 });
-
-// router.post('/', async (req, res) => {
-//     // let message = {
-//     //     to: 
-//     // };
-//     service.messageAPI(message);
-// });
 
 module.exports = router;
