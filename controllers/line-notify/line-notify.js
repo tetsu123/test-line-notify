@@ -1,6 +1,18 @@
 const express = require('express');
 const router = express.Router();
-const service = require('../../service/lineNotify')
+const service = require('../../service/lineNotify');
+const line = require('@line/bot-sdk');
+
+// create LINE SDK config from env variables
+const secret = 'e0541bbc5e64b951b1f5f4c42d338f6e';
+const token = 'TJ7zvFrDTb+4rd0LLqeDh5QVk8IqbNeLvXbHG5Prrxwd5fhO+RuDpUjgeisY50Tsb026CZQz1+ZMBYUIZV5Q7JCz/58rrKoyoLBXhsscU4fksVi+SFfTpYRBVhH5GDtvxGjQKp5vAemKZPMBMN7WhAdB04t89/1O/w1cDnyilFU=';
+const config = {
+  channelAccessToken: token,
+  channelSecret: secret
+};
+
+// create LINE SDK client
+const client = new line.Client(config);
 
 router.post('/', async (req, res) => {
     // service.notifyService();
@@ -8,18 +20,17 @@ router.post('/', async (req, res) => {
     //     msg: 'OK'
     // });
     console.log('req.body', req.body);
-    console.log('req.body.message', req.body.message);
-    // let replyToken = req.body.events[0].replyToken;
-    // let msg = req.body.events[0].message.text;
+    let event = req.body.event[0];
+    let text = event.message.text;
+    let replyToken = event.replyToken;
+    console.log('event.message', event.message);
+    console.log('text', text);
 
-    // console.log('replyToken', replyToken);
-    // console.log('msg', msg);
-
-    // res.sendStatus(200);
-    res.json({
-        status: 200,
-        message: 'Webhook is working!'
-    });
+    let payload = {
+        type: 'text',
+        text: text
+    };
+    res.json(replyToken, payload);
 });
 
 // router.post('/', async (req, res) => {
