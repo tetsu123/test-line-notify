@@ -14,10 +14,11 @@ router.get('/', async (req, res) => {
     // console.log('replyToken', replyToken);
     // console.log('msg', msg);
 
-    res.json({
-        status: 200,
-        message: 'Webhook is working!'
-    });
+    res.sendStatus(200);
+    // res.json({
+    //     status: 200,
+    //     message: 'Webhook is working!'
+    // });
 });
 
 // router.post('/', async (req, res) => {
