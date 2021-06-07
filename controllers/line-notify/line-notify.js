@@ -8,6 +8,7 @@ router.post('/', async (req, res) => {
     //     msg: 'OK'
     // });
     console.log('req.body', req.body);
+    console.log('req.body.message', req.body.message);
     // let replyToken = req.body.events[0].replyToken;
     // let msg = req.body.events[0].message.text;
 
