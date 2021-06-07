@@ -7,7 +7,7 @@ const unirest = require('unirest');
 
 app.use(bodyParser.json({limit: '50mb'}));
 
-cron.schedule('5000', async () => {
+cron.schedule('"*/10 * * * * *"', async () => {
     try {
         let channelToken = 'TJ7zvFrDTb+4rd0LLqeDh5QVk8IqbNeLvXbHG5Prrxwd5fhO+RuDpUjgeisY50Tsb026CZQz1+ZMBYUIZV5Q7JCz/58rrKoyoLBXhsscU4fksVi+SFfTpYRBVhH5GDtvxGjQKp5vAemKZPMBMN7WhAdB04t89/1O/w1cDnyilFU=';
         let linePushAPI = 'https://api.line.me/v2/bot/message/push';
